@@ -1,0 +1,52 @@
+﻿@model Shop.Models.Thing
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование товара</title>
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+    { 
+    <fieldset>
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Name, "Наименование")
+            <br />
+            @Html.EditorFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Code, "Артикул")
+            <br />
+            @Html.EditorFor(m => m.Code)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Size, "Размер")
+            <br />
+            @Html.EditorFor(m => m.Size)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Color, "Цвет")
+            <br />
+            @Html.EditorFor(m => m.Color)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Descripton, "Описание")
+            <br />
+            @Html.EditorFor(m => m.Descripton)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price, "Стоймость")
+            <br />
+            @Html.EditorFor(m => m.Price)
+        </p>
+
+        <p><input type="submit" value="Сохранить" /></p>
+    </fieldset>
+    }
+</body>
+</html>
